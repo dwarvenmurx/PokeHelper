@@ -164,7 +164,7 @@ export default function App() {
       </div>
 
       {/* --- AKTIONEN --- */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', width: '100%', overflowX: 'hidden' }}>
         <p style={{ margin: 0, color: '#555' }}>
           Ausgewählte Pokémon: <strong>{selectedTeam.length}</strong> (Klicke auf eine Zeile, um sie hervorzuheben)
         </p>
@@ -189,16 +189,16 @@ export default function App() {
       {/* --- AUSGABETABELLE MIT FIXIERTEM KOPF --- */}
       <div
         style={{
-          maxHeight: '800px', // Höhe für Scrollbereich
+          maxHeight: '600px', // Höhe für Scrollbereich
           overflowY: 'auto',   // Scrollbar aktivieren
-          overflowX: 'auto',   // Horizontales Scrollen bei Bedarf
+          // overflowX: 'auto',   // Horizontales Scrollen bei Bedarf
           border: '1px solid #ccc',
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
           width: '100%',
         }}
       >
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', tableLayout: 'auto', fontSize: '0.85rem' }}>
           <thead>
             <tr>
               {columns.map((col) => (
@@ -209,9 +209,11 @@ export default function App() {
                     top: 0,
                     backgroundColor: '#1e293b',
                     color: 'white',
-                    padding: '0.75rem 1rem',
+                    padding: '0.4rem 0.5rem',
                     zIndex: 1,
                     textTransform: 'capitalize',
+                    wordBreak: 'break-word',
+                    fontSize: '0.85rem'
                   }}
                 >
                   {col}
@@ -237,7 +239,7 @@ export default function App() {
                   }}
                 >
                   {columns.map((col) => (
-                    <td style={{ padding: '0.75rem 1rem' }} key={`cell-${rowIndex}-${col}`}>
+                    <td style={{ padding: '0.4rem 0.5rem', wordBreak: 'break-word', fontSize: '0.85rem' }} key={`cell-${rowIndex}-${col}`}>
                       {renderValue(pokemon[col])}
                     </td>
                   ))}
@@ -249,7 +251,7 @@ export default function App() {
               <tr>
                 <td
                   colSpan={columns.length + 1}
-                  style={{ padding: '2rem', textAlign: 'center', color: '#94a3b8' }}
+                  style={{ padding: '1.5rem', textAlign: 'center', color: '#94a3b8' }}
                 >
                   Noch keine Pokémon hinzugefügt. Gib oben einen Namen ein!
                 </td>
