@@ -116,11 +116,11 @@ export default function App() {
     const sortedTeam = [...selectedTeam].sort((a, b) => getPokemonNumber(a) - getPokemonNumber(b));
 
   return (
-    <div style={{ maxWidth: '95vw', margin: '0 auto', padding: '1.5rem', fontFamily: 'sans-serif' }}>
-      <h1>Pokennection Hilfsprogramm</h1>
+    <div style={{ maxWidth: '95vw', marginTop: '0.1rem', marginBottom: '1rem', padding: '0.1rem 1rem 1rem 1rem', fontFamily: 'sans-serif' }}>
+      <h1 style={{ marginTop: 0, paddingTop: 0, marginBottom: '0.75rem', fontSize: '1.5rem' }}>Pokennection Hilfsprogramm</h1>
 
       {/* --- EINGABEMASKE MIT AUTO-VERVOLLSTÄNDIGUNG --- */}
-      <div style={{ marginBottom: '2rem', maxWidth: '500px' }}>
+      <div style={{ marginBottom: '1rem', maxWidth: '500px' }}>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           <input
             type="text"
@@ -132,8 +132,8 @@ export default function App() {
             onKeyDown={(e) => e.key === 'Enter' && handleAddPokemon()}
             style={{
               flex: 1,
-              padding: '0.75rem',
-              fontSize: '1rem',
+              padding: '0.4rem 0.6rem',
+              fontSize: '0.85rem',
               borderRadius: '6px',
               border: '1px solid #ccc',
             }}
@@ -149,8 +149,8 @@ export default function App() {
           <button
             onClick={() => handleAddPokemon()}
             style={{
-              padding: '0.75rem 1.25rem',
-              fontSize: '1rem',
+              padding: '0.4rem 0.85rem',
+              fontSize: '0.85rem',
               backgroundColor: '#2563eb',
               color: 'white',
               border: 'none',
@@ -189,7 +189,7 @@ export default function App() {
       {/* --- AUSGABETABELLE MIT FIXIERTEM KOPF --- */}
       <div
         style={{
-          maxHeight: '600px', // Höhe für Scrollbereich
+          maxHeight: '900px', // Höhe für Scrollbereich
           overflowY: 'auto',   // Scrollbar aktivieren
           // overflowX: 'auto',   // Horizontales Scrollen bei Bedarf
           border: '1px solid #ccc',
